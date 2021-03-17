@@ -5,14 +5,13 @@ class Solution:
         Given an array of integers nums and an integer target, return indices
         of the two numbers such that they add up to target.
         """
+        my_dict = {}
         result = []
-        i = 0
-        while i < len(nums):    # Let's try something faster
-            try:
-                j = nums.index(target - nums[i], i + 1)
-                result += [i, j]
+        for i in range(len(nums)):
+            complement = target - nums[i]
+            if complement in my_dict.keys():
+                result = [my_dict[complement], i]
                 break
-            except ValueError:
-                i += 1
+            my_dict[nums[i]] = i
 
         return result
