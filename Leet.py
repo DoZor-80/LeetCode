@@ -15,3 +15,12 @@ class Solution:
             my_dict[nums[i]] = i
 
         return result
+
+
+def run():
+    solution = Solution()
+    print('Script is running...')
+
+
+if __name__ == '__main__':
+    run()
